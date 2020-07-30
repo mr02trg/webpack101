@@ -1,0 +1,17 @@
+{
+  "name": "01_webpack_basic",
+  "version": "1.0.0",
+  "description": "Setup webpack - npm init - npm install webpack --save-dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack src/js/app.js --output dist/bundle.js --mode development",
+    "build:prod": "webpack src/js/app.js --output dist/bundle.js --mode production -p"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
