@@ -1,5 +1,11 @@
 const  path = require('path');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const extractPlugin = new MiniCssExtractPlugin({
+  filename: 'main.css'
+})
+
 module.exports = {
   entry: './src/js/app.js',
   output: {
@@ -9,12 +15,14 @@ module.exports = {
   },
   module: {
     rules: [
-      // allow css to be loaded into your js file instead of declare it explicitly from index.htmn header
+      // scss workflow - MiniCssExtractionPlugin will separate css into a separate file (main.css)
+      // need to import this file into index.html
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: [
-          'style-loader',
-          'css-loader'       
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
@@ -32,5 +40,6 @@ module.exports = {
     ]
   },
   plugins: [
+    extractPlugin
   ]
 }
