@@ -15,3 +15,27 @@
     npm i webpack-dev-server --save-dev
     webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js --mode development
 - bundle.js is automatically build and served from memory
+
+04. Webpack Core Concept
+- Creating webpack.config.js
+- webpack will automatically use this config file name convention
+- There are 4 key concepts: 
+
+    ** Entry Point
+        - Path to the entry point(s) is relative to the webpack config file
+
+    ** Plugins
+        - apply to the whole code - transform the code before output
+        - for example: webpack minification of js code 
+
+    ** Module loaders
+        - apply on per file basis
+        - order of loaders used matter  --> webpack execute the loaders in reverse order
+
+    ** Output
+        - A js object
+        - Define where to store the it and its name
+        - Output path needs to be absolute
+
+- Need to specify public path for webpack-dev-server to work.
+The dev server doesnt understand the concept of absolute path
