@@ -39,3 +39,9 @@
 
 - Need to specify public path for webpack-dev-server to work.
 The dev server doesnt understand the concept of absolute path
+
+---------------------------
+05. Babel
+** Babel is an transcompiler to convert ECMAScript2015+ into backwards compatible version of JS that can be run by older JS engine
+- Modules needed: babel-core, babel-loader, babel/preset-env
+- Setup: npm i @babel/core @babel/core @babel/preset-env babel-loader --save-dev
