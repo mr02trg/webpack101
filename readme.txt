@@ -57,3 +57,17 @@ The dev server doesnt understand the concept of absolute path
 - SCSS will first be compiled to CSS (css-loader, sass-loader, node-sass) and then use
 Setup: 
 npm i sass-loader node-sass mini-css-extract-plugin --save-dev 
+
+---------------------------
+07. html-loader 
+- Allow us to include css and js file dynamically into your html rather than hardcoded
+
+* html-webpack-plugin
+- index.html is now automatically copied into /dist folder on build 
+    -> need to remove publicPath on our webpack config output
+    -> since our assets (i.e bundle.js and main.css) are now in the same folder as index.html, not from /dist folder anymore
+
+*  clean-webpack-plugin
+- output management plugin
+- remove and recreate dist folder on every build
+    -> prevent build cache
